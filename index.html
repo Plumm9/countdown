@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>เคาท์ดาวน์ปีใหม่ของเรา ❤️</title>
+  <style>
+    body {
+      text-align: center;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+    }
+    h1 { margin-top: 40px; }
+    .time {
+      font-size: 40px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Countdown ปีใหม่ของปกป้อง & แฟน ❤️✨</h1>
+  <div class="time" id="cd"></div>
+
+  <script>
+    const target = new Date("Jan 1, 2026 00:00:00").getTime();
+    setInterval(() => {
+      let now = new Date().getTime();
+      let diff = target - now;
+
+      let d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      let h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      let m = Math.floor((diff / (1000 * 60)) % 60);
+      let s = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("cd").innerHTML =
+        `${d} วัน ${h} ชม. ${m} นาที ${s} วินาที`;
+    }, 1000);
+  </script>
+</body>
+</html>
